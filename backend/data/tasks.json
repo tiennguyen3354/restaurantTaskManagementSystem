@@ -1,0 +1,83 @@
+
+[
+  {
+    "id": 1,
+    "title": "Clean dining tables",
+    "description": "Wipe and sanitize all dining tables before opening.",
+    "category": "Opening",
+    "priority": "High",
+    "status": "Completed",
+    "assignedTo": "John",
+    "dueDate": "2026-11-01"
+  },
+  {
+    "id": 2,
+    "title": "Restock sauces",
+    "description": "Refill all sauce containers and check expiration dates.",
+    "category": "Preparation",
+    "priority": "Medium",
+    "status": "Pending",
+    "assignedTo": "Sarah",
+    "dueDate": "2026-11-01"
+  },
+  {
+    "id": 3,
+    "title": "Clean kitchen floors",
+    "description": "Sweep and mop the kitchen floor.",
+    "category": "Closing",
+    "priority": "High",
+    "status": "In Progress",
+    "assignedTo": "Michael",
+    "dueDate": "2026-10-31"
+  },
+  {
+    "id": 4,
+    "title": "Restock beverages",
+    "description": "Check refrigerator inventory and restock drinks.",
+    "category": "Preparation",
+    "priority": "Low",
+    "status": "Pending",
+    "assignedTo": "David",
+    "dueDate": "2026-11-02"
+  },
+  {
+    "id": 5,
+    "title": "Clean restaurant entrance",
+    "description": "Clean windows, doors, and entrance area.",
+    "category": "Opening",
+    "priority": "Medium",
+    "status": "Completed",
+    "assignedTo": "John",
+    "dueDate": "2026-11-01"
+  },
+  {
+    "id": 6,
+    "title": "Count cash register",
+    "description": "Verify register balance at the end of the shift.",
+    "category": "Closing",
+    "priority": "High",
+    "status": "Pending",
+    "assignedTo": "Sarah",
+    "dueDate": "2026-10-31"
+  },
+  {
+    "id": 7,
+    "title": "Restock napkins",
+    "description": "Fill napkin holders throughout the restaurant.",
+    "category": "Preparation",
+    "priority": "Low",
+    "status": "In Progress",
+    "assignedTo": "Michael",
+    "dueDate": "2026-11-01"
+  },
+  {
+    "id": 8,
+    "title": "Turn off kitchen equipment",
+    "description": "Ensure all nonessential equipment is switched off.",
+    "category": "Closing",
+    "priority": "High",
+    "status": "Pending",
+    "assignedTo": "David",
+    "dueDate": "2026-10-31"
+  }
+]
