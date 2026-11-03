@@ -12,6 +12,6 @@ app.use(express.json());
 app.use('/api', taskRouter);
 
 app.listen(PORT, () => {
-  console.log('hello work from api endpoint')
+  console.log('hello from api endpoint')
   console.log(`Server is running on http://localhost:${PORT}`);
 }); 

@@ -22,10 +22,33 @@ const getTaskById = async (id) => {
     return task || null; // Return the found task or null if not found
 } 
 
-const createTask = async (task) => {}
+const createTask = async (task) => {
+    const data = JSON.parse(await fs.readFile('./data/tasks.json', 'utf-8'));
+    data.push(task);
+    await fs.writeFile('./data/tasks.json', JSON.stringify(data));
+    return task;
+}
 
-const updateTask = async (id, updatedTask) => {}
+const updateTask = async (id, updatedTask) => {
+    const data = JSON.parse(await fs.readFile('./data/tasks.json', 'utf-8'));
+    const taskIndex = data.findIndex(task => task.id === id);
+    if (taskIndex !== -1) {
+        data[taskIndex] = { ...data[taskIndex], ...updatedTask };
+        await fs.writeFile('./data/tasks.json', JSON.stringify(data));
+        return data[taskIndex];
+    }
+    return null;
+}
 
-const deleteTask = async (id) => {}
+const deleteTask = async (id) => {
+    const data = JSON.parse(await fs.readFile('./data/tasks.json', 'utf-8'));
+    const taskIndex = data.findIndex(task => task.id === id);
+    if (taskIndex !== -1) {
+        const deletedTask = data.splice(taskIndex, 1)[0];
+        await fs.writeFile('./data/tasks.json', JSON.stringify(data));
+        return deletedTask;
+    }
+    return null;
+}
 
 export default { getTasks, getTaskById, createTask, updateTask, deleteTask };
