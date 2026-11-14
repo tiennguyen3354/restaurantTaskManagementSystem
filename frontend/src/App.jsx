@@ -35,12 +35,9 @@ function App() {
       }
 
     }
-  
-
 
     fetchTasks(); 
   
-
   }, []);
 
   function completeTask(id) { 
@@ -71,15 +68,36 @@ function App() {
     event.preventDefault() ; 
     console.log(`Task name:  ${taskName}  , Task ID: ${taskID}, Task Status: ${taskStatus}`); 
   }
-
-  function addTask( event ) { 
+  
+  async function addTask( event ) { 
     event.preventDefault(); 
+    //id,title, description, category, priority, status, assignedTo, dueDate
     const newTask = { 
       id: taskID, 
       title: taskName, 
+      description: "none", 
+      category: "none", 
+      priority: "none", 
+      assignedTo: "none", 
+      dueDate: "none", 
       status: taskStatus
     }
-    setTasks ( (currentTasks) => [ ...currentTasks, newTask])
+    try { 
+
+    const response = await fetch('http://localhost:3000/api/tasks', { 
+      method: 'POST', 
+      headers: { 
+        'Content-Type': 'application/json'
+      }, 
+      body: JSON.stringify(newTask)
+    })
+    const savedTask = await response.json(); 
+    console.log(savedTask)
+    
+    setTasks ( (currentTasks) => [ ...currentTasks, savedTask])
+  } catch (error) { 
+    console.log("couldnt add tasks to the server", error)
+  }
 
   }
 
