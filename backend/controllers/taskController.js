@@ -44,8 +44,10 @@ export const createTask = async (req, res) => {
         }else{ 
         const newTask = {id, title, description, category, priority, status, assignedTo, dueDate};
         const createdTask = await taskDb.createTask(newTask);
+        console.log(`user added a new task :` , createTask)
         //step 3: send the created task back to the client
         res.status(201).json(createdTask);
+     
      }
     }
     catch (error) {
